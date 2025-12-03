@@ -24,19 +24,7 @@ httpcore_logger.addHandler(logging.NullHandler())
 httpcore_logger.propagate = False
 
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN', '')
-REPO_LIST = (
-    ('pdaz000', 'panda-zxs/runner'),
-    ('pdaz001', 'pdaz001/runner'),
-    ('pdaz002', 'pdaz002/runner'),
-    ('pdaz003', 'pdaz003/runner'),
-    ('pdaz004', 'pdaz004/runner'),
-    ('pdaz005', 'pdaz005/runner'),
-    ('pdaz006', 'pdaz006/runner'),
-    ('pdaz007', 'pdaz007/runner'),
-    ('pdaz008', 'pdaz008/runner'),
-    ('pdaz009', 'pdaz009/runner'),
-    ('pdaz010', 'pdaz010/runner'),
-)
+REPO_LIST = [repo.split('|') for repo in os.environ.get('REPO_LIST', '').split(',')]
 
 
 def main():
